@@ -1,0 +1,13 @@
+default['tomcat7']['giturl']= 'https://github.com/ashishraj91/petclinic/raw/master/petclinic_mysql.war'
+default['tomcat7']['nexus_url']='https://github.com/jyoti-rl/petclinic_war/raw/master/petclinic.war'
+default['tomcat7']['dep_dir']= '/var/lib/tomcat7/webapps'
+default['tomcat7']['database_connection']= '/var/lib/tomcat7/webapps/petclinic_mysql/WEB-INF/classes/spring/data-access.properties'
+default['tomcat7']['ipaddress']= "<%= node['ipaddress'] -%>"
+default['tomcat7']['version']='5.6'
+default['tomcat7']['port']='3306'
+default['tomcat7']['db_name']='petclinic'
+default['tomcat7']['db_user']='admin'
+default['tomcat7']['db_password']='admin'
+default['tomcat7']['war']['version']='4'
+default['tomcat7']['war']['name']='petclinic.war'
+default['tomcat7']['environment']['name']='dev'

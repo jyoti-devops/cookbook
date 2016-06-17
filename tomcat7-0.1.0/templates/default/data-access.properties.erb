@@ -1,0 +1,22 @@
+jpa.showSql=true
+
+#-------------------------------------------------------------------------------
+# MySQL Settings
+
+jdbc.driverClassName=com.mysql.jdbc.Driver
+<% @dbserver.each do |webserver| -%>
+jdbc.url=jdbc:mysql://<%= webserver['ipaddress'] -%>:3306/petclinic
+<% end -%>
+
+jdbc.username=<%= node[:tomcat7][:db_user] %>
+jdbc.password= <%= node[:tomcat7][:db_password]%>
+
+jdbc.initLocation=classpath:db/mysql/initDB.sql
+jdbc.dataLocation=classpath:db/mysql/populateDB.sql
+
+# Property that determines which Hibernate dialect to use
+# (only applied with "applicationContext-hibernate.xml")
+hibernate.dialect=org.hibernate.dialect.MySQLDialect
+
+# Property that determines which database to use with an AbstractJpaVendorAdapter
+jpa.database=MYSQL
